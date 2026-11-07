@@ -1,0 +1,62 @@
+[
+  {
+    "id": "atlas-14",
+    "title": "Atlas 14",
+    "description": "A compact everyday notebook. 14-inch matte display, 16 GB memory and 512 GB SSD.",
+    "price": 74900,
+    "memory": "16 GB",
+    "storage": "512 GB SSD",
+    "display": "14-inch matte",
+    "color": "slate"
+  },
+  {
+    "id": "studio-16",
+    "title": "Studio 16",
+    "description": "Room for creative work. A bright 16-inch display, 32 GB memory and 1 TB SSD.",
+    "price": 129900,
+    "memory": "32 GB",
+    "storage": "1 TB SSD",
+    "display": "16-inch IPS",
+    "color": "sand"
+  },
+  {
+    "id": "roam-13",
+    "title": "Roam 13",
+    "description": "Travel light with a portable 13-inch notebook. 16 GB memory and 512 GB SSD.",
+    "price": 99900,
+    "memory": "16 GB",
+    "storage": "512 GB SSD",
+    "display": "13-inch IPS",
+    "color": "mint"
+  },
+  {
+    "id": "workshop-15",
+    "title": "Workshop 15",
+    "description": "A practical work companion. 15-inch display, 16 GB memory and 1 TB SSD.",
+    "price": 87900,
+    "memory": "16 GB",
+    "storage": "1 TB SSD",
+    "display": "15-inch matte",
+    "color": "clay"
+  },
+  {
+    "id": "field-14",
+    "title": "Field 14",
+    "description": "A balanced notebook for notes and projects. 14-inch display, 8 GB memory and 256 GB SSD.",
+    "price": 54900,
+    "memory": "8 GB",
+    "storage": "256 GB SSD",
+    "display": "14-inch IPS",
+    "color": "mint"
+  },
+  {
+    "id": "canvas-16",
+    "title": "Canvas 16",
+    "description": "A generous screen for your next idea. 16-inch display, 32 GB memory and 2 TB SSD.",
+    "price": 159900,
+    "memory": "32 GB",
+    "storage": "2 TB SSD",
+    "display": "16-inch IPS",
+    "color": "sand"
+  }
+]
