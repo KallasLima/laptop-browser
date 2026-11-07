@@ -52,7 +52,7 @@ void main() {
     final data = await tester.runAsync(() => CatalogRepository().load());
     await tester.pumpWidget(LaptopApp(repository: LoadedCatalog(data!)));
     await tester.pumpAndSettle();
-    expect(find.text('Find your everyday fit.'), findsOneWidget);
+    expect(find.text('Find your next\nmachine.'), findsOneWidget);
     await tester.enterText(find.byType(TextField), 'Atlas');
     await tester.pumpAndSettle();
     expect(find.text('Atlas 14'), findsOneWidget);

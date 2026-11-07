@@ -33,17 +33,20 @@ class _LaptopDetailState extends State<LaptopDetail> {
             SizedBox(
               height: 260,
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: LaptopArt(index: widget.index),
+                borderRadius: BorderRadius.zero,
+                child: LaptopArt(
+                  index: widget.index,
+                  productId: widget.laptop.id,
+                ),
               ),
             ),
             const SizedBox(height: 28),
             Text(
               widget.laptop.title,
               style: const TextStyle(
-                fontSize: 32,
+                fontSize: 42,
                 color: ink,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w700,
               ),
             ),
             const SizedBox(height: 10),
@@ -53,7 +56,7 @@ class _LaptopDetailState extends State<LaptopDetail> {
             ),
             const SizedBox(height: 24),
             const Text(
-              'THE DETAILS',
+              'SPECIFICATIONS',
               style: TextStyle(
                 fontSize: 10,
                 letterSpacing: 2,
@@ -63,12 +66,45 @@ class _LaptopDetailState extends State<LaptopDetail> {
             const SizedBox(height: 12),
             Text(
               widget.laptop.description,
-              style: const TextStyle(
-                fontSize: 16,
-                height: 1.65,
-                color: Color(0xff60746e),
-              ),
+              style: const TextStyle(fontSize: 16, height: 1.65, color: muted),
             ),
+            if (widget.laptop.display != null ||
+                widget.laptop.memory != null ||
+                widget.laptop.storage != null) ...[
+              const SizedBox(height: 25),
+              const Divider(color: rule),
+              Wrap(
+                spacing: 28,
+                runSpacing: 18,
+                children: [
+                  for (final spec in [
+                    ['DISPLAY', widget.laptop.display],
+                    ['MEMORY', widget.laptop.memory],
+                    ['STORAGE', widget.laptop.storage],
+                  ])
+                    if (spec[1] != null)
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            spec[0]!,
+                            style: const TextStyle(color: muted, fontSize: 11),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            spec[1]!,
+                            style: const TextStyle(
+                              color: ink,
+                              fontSize: 19,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                      ),
+                ],
+              ),
+              const Divider(color: rule),
+            ],
             const SizedBox(height: 30),
             FilledButton.icon(
               onPressed: busy
@@ -93,7 +129,7 @@ class _LaptopDetailState extends State<LaptopDetail> {
             const Text(
               'Saved items stay on this device. This catalog does not process orders.',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 12, color: Color(0xff536b64)),
+              style: TextStyle(fontSize: 12, color: muted),
             ),
           ],
         ),

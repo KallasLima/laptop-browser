@@ -5,11 +5,15 @@ import 'package:http/http.dart' as http;
 class Laptop {
   final String id, title, description;
   final int price;
+  final String? display, memory, storage;
   const Laptop({
     required this.id,
     required this.title,
     required this.description,
     required this.price,
+    this.display,
+    this.memory,
+    this.storage,
   });
   factory Laptop.fromJson(Map<String, dynamic> json) {
     if (json['id'] is! String ||
@@ -25,6 +29,9 @@ class Laptop {
       title: json['title'],
       description: json['description'],
       price: json['price'],
+      display: json['display'] is String ? json['display'] : null,
+      memory: json['memory'] is String ? json['memory'] : null,
+      storage: json['storage'] is String ? json['storage'] : null,
     );
   }
   String get priceLabel => '\$${(price / 100).toStringAsFixed(2)}';

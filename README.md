@@ -24,7 +24,7 @@ Or select an Android device with `flutter devices`, then run `flutter run -d <de
 3. Restart the app: the shortlist remains on the same device/browser origin.
 4. Remove the saved laptop and try a search with no matches.
 
-The 6 bundled products and their prices are fictional. The laptop illustrations are original vector drawings. This app is a catalog and shortlist; account registration and checkout are outside its scope.
+The 6 bundled products and their prices are fictional. The six local WebP laptop renders were generated for this edition and depict fictional hardware. They do not establish real product appearance or benchmark claims. Space Grotesk is bundled under the SIL Open Font License, with its notice in `assets/fonts`. This app is a catalog and shortlist; account registration and checkout are outside its scope.
 
 ## Optional API mode
 
@@ -45,7 +45,7 @@ The debug Android configuration permits cleartext only for local development hos
 - `lib/catalog.dart`: validated model, asset/API repository and timeout.
 - `lib/main.dart`: catalog load lifecycle, query, navigation and shortlist persistence.
 - `lib/laptop_detail.dart`: scrollable detail screen and saved-state control.
-- `lib/widgets/laptop_art.dart`: vector illustration.
+- `lib/widgets/laptop_art.dart`: fictional-model image mapping and explicit fallback for unknown API products.
 - `assets/laptops.json`: authored offline data.
 
 Favorites use the scoped `laptop_browser.saved.v1` SharedPreferences key. Other preferences are left alone. Loading happens once in the page lifecycle rather than during build. Saved-state writes are acknowledged before updating the UI; failures are visible. Favorites store product IDs, so products absent from a later API response are not shown until they return. No personal data or account tokens are stored.
@@ -60,6 +60,6 @@ flutter build web
 flutter build apk --debug
 ```
 
-Tests cover fixture parsing, malformed/failed API responses, search, details and a persisted favorite without overwriting unrelated preferences. Android validation exercises the actual installed app. Web output can be served from `build/web` by any local static server; Flutter’s renderer may load engine/font resources on first use. Bundled demo data means no catalog API is required.
+Tests cover fixture parsing, malformed/failed API responses, search, details and a persisted favorite without overwriting unrelated preferences. Android validation exercises the actual installed app. Web output can be served from `build/web` by any local static server; Web semantics are enabled at startup for keyboard and assistive-technology controls. Flutter’s renderer may load engine resources on first use. Bundled demo data means no catalog API is required.
 
 Flutter, Material/Cupertino icons and packages retain their licenses. A distribution license for this project has not been selected.
